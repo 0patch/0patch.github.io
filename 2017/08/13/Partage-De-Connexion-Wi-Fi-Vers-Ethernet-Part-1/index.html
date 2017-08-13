@@ -215,7 +215,7 @@
                         <i class="fa fa-tags" aria-hidden="true"></i> &nbsp;
 
 
-<a href="/tags/Reseaux/">#Réseaux</a> <a href="/tags/Linux/">#Linux</a>
+<a href="/tags/Reseaux/">#Réseaux</a> <a href="/tags/Linux/">#Linux</a> <a href="/tags/Wi-Fi/">#Wi-Fi</a> <a href="/tags/Ethernet/">#Ethernet</a>
 
 
                     
@@ -226,7 +226,7 @@
                         <i class="fa fa-tags" aria-hidden="true"></i> &nbsp;
 
 
-<a href="/tags/Reseaux/">#Réseaux</a> <a href="/tags/Linux/">#Linux</a>
+<a href="/tags/Reseaux/">#Réseaux</a> <a href="/tags/Linux/">#Linux</a> <a href="/tags/Wi-Fi/">#Wi-Fi</a> <a href="/tags/Ethernet/">#Ethernet</a>
 
 
                     
@@ -246,21 +246,21 @@
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <p>Salut!<br>Dans l’optique de commencer une nouvelle serie d’articles sur le <strong>Hacking</strong>!!! J’ai resentis le besoin d’écrire un nouvel article sur un basique important. Vous vous êtes retrouvés souvent dans des situations où vous aurez bien voulu partager votre connexion Wi-Fi vers votre connexion Ethernet. Cet article concernent aussi bien les utilisateurs Linux que Windows. Dans ce premier article, je decrirez comment configurez le partage de connexion sous Linux <strong> <em>(Kali Linux dans mon cas, mais marchera surtoute distribution Linux)</em> </strong>. Sans trop perdre de temps allons dans le vif du sujet. </p>
+                <p>Salut!<br>Dans l’optique de commencer une nouvelle serie d’articles sur le <strong>Hacking</strong>!!! J’ai resentis le besoin d’écrire un nouvel article sur un basique important. Vous vous êtes retrouvés souvent dans des situations où vous aurez bien voulu partager vôtre connexion Wi-Fi vers vôtre connexion Ethernet. Cet article concernent aussi bien les utilisateurs Linux que Windows. Dans ce premier article, je decrirez comment configurez le partage de connexion sous Linux <strong> <em>(Kali Linux dans mon cas, mais marchera sur toute distribution Linux)</em> </strong>. Sans trop perdre de temps allons dans le vif du sujet. </p>
 <h4 id="Pre-requis"><a href="#Pre-requis" class="headerlink" title="Pré-requis:"></a>Pré-requis:</h4><ul>
 <li>Un ordinateur (Linux)</li>
 <li>Un Raspberry Pi3 Model B ou un ordinateur (Linux ou Windows) </li>
 <li>Un câble RJ45 (Ethernet) - (croisés ou non)</li>
 </ul>
 <h3 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h3><p>Ouvrez un terminal et tapez la commande suivante:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ nm-connection-editor</div></pre></td></tr></table></figure></p>
-<p>Ensuite, choisissez <strong>Wired Ethernet 1</strong> ou toute autre connexion sous <strong>Ethernet</strong> et cliquez sur <strong>Editer</strong>. Dans la nouvelle fenêtre qui s’ouvrira comme ci-dessous, allez à l’onglet <strong>IPv4 Parameters</strong> ou <strong>Paramètres IPv4</strong> et selectionnez dans la liste déroulante <strong>Share to others computers</strong> ou <strong>Partage à d’autres ordinateurs</strong> comme ci-dessous. Ce paramètre nous permettra lorsqu’on connectera un autre ordinateur sur le port <strong>Ethernet</strong> de créer un <strong>réseau local</strong> entre le nouvel ordinateur et le nôtre.<br><strong>NB:</strong> <em>Si vous avez configuré une adresse statique, veuillez supprimer votre configuration dans le champ</em> <strong> <em>Address (Optional)</em> ou <em>Adresse (Optionale)</em> </strong> <em>juste en-bas de la liste déroulante. Pour cela</em>, <em>sélectioné la configuration en cliquant sur la ligne et cliqué supprimer</em>.</p>
+<p>Ensuite, choisissez <strong>Wired Ethernet 1</strong> ou toute autre connexion sous <strong>Ethernet</strong> et cliquez sur <strong>Editer</strong>. Dans la nouvelle fenêtre qui s’ouvrira comme ci-dessous, allez à l’onglet <strong>IPv4 Parameters</strong> ou <strong>Paramètres IPv4</strong> et selectionnez dans la liste déroulante <strong>Share to others computers</strong> ou <strong>Partage à d’autres ordinateurs</strong> comme ci-dessous. Ce paramètre nous permettra lorsqu’on connectera un autre ordinateur sur le port <strong>Ethernet</strong> de créer un <strong>réseau local</strong> entre le nouvel ordinateur et le nôtre.<br><strong>NB:</strong> <em>Si vous avez configuré une adresse statique, veuillez supprimer vôtre configuration dans le champ</em> <strong> <em>Address (Optional)</em> ou <em>Adresse (Optionale)</em> </strong> <em>juste en-bas de la liste déroulante. Pour cela</em>, <em>sélectioné la configuration en cliquant sur la ligne et cliqué supprimer</em>.</p>
 <p><img src="/img/Eth0-Linux-1.png" alt="Reference 1"></p>
 <p>Comme vu dans la capture ci-dessus, notre connexion utilisera l’<strong>IPv4</strong>. Donc pour cela, allez à l’onglet <strong>IPv6 Parameters</strong> ou <strong>Paramètres IPv6</strong> et selectionné dans la liste déroulante <strong>Ignore</strong> ou <strong>Ignorez</strong> comme ci-dessous. Pour finir cliqué sur <strong>Save</strong> ou <strong>Enregistrer</strong> et fermé toutes les fenêtres.</p>
 <p><img src="/img/Eth0-Linux-2.png" alt="Reference 2"></p>
 <p>Maintenant que vous avez configuré la connexion, connecté le sécond ordinateur en utilisant le câble <strong>Ethernet</strong> et tapé la commande suivante dans un terminal.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ cat /var/lib/misc/dnsmasq.leases</div></pre></td></tr></table></figure></p>
 <p>Si vous avez bien configuré la connexion, vous obtiendrez un resultat similaire a la capture ci-dessous. Vous pouvez voir <strong> <em>l’adresse IP du second ordinateur</em> </strong> et son adresse <strong>MAC</strong> ou <strong> <em>Media Access Control</em> </strong>.</p>
 <p><img src="/img/Eth0-Linux-3.png" alt="Reference 3"></p>
-<p>Merci de m’avoir lu et j’espère que vous aurez appréciez ce article. Vous pouvez lire mon précedent article <a href="https://0patch.github.io/2017/07/01/Comment-se-proteger-contre-NotPetya/">ici</a>.</p>
+<p>Merci de m’avoir lu et j’espère que vous aurez appréciez cet article. Vous pouvez lire mon précédent article <a href="https://0patch.github.io/2017/07/01/Comment-se-proteger-contre-NotPetya/">ici</a>.</p>
 
 
                 
