@@ -10,6 +10,8 @@
 
     <!--Description-->
     
+        <meta name="description" content="Salut!Dans mes postes précedent, nous avons installé et configuré Kali Linux. Maintenant Kali Linux utilise aussi plus d’espace, mais toujours est-il ">
+    
 
     <!--Author-->
     
@@ -33,6 +35,8 @@
     
 
     <!--Page Cover-->
+    
+        <meta property="og:image" content="https://0patch.github.io/img/kali-full-bg.jpeg" />
     
 
         <meta name="twitter:card" content="summary" />
@@ -176,7 +180,7 @@
     <!-- Page Header -->
 <!-- Set your background image for this header in your post front-matter: cover -->
 
-<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+<header class="intro-header" style="background-image: url('/img/kali-full-bg.jpeg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
@@ -185,6 +189,8 @@
                     
                     <span class="meta">
                         <!-- Date and Author -->
+                        
+                            Publié par 0patch en
                         
                         
                             Sep 2017
@@ -203,13 +209,61 @@
 
             <!-- Tags and categories -->
            
+               <!-- Original Code
+		<div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        <i class="fa fa-tags" aria-hidden="true"></i> &nbsp;
+
+
+<a href="/tags/Linux/">#Linux</a>
+
+
+                    
+                </div>
+	     -->
+		<div class="post-tags" align="center">
+                    
+                        <i class="fa fa-tags" aria-hidden="true"></i> &nbsp;
+
+
+<a href="/tags/Linux/">#Linux</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                        
+
+<a href="/categories/Systemes-d-Exploitation/">Systèmes d'Exploitation</a>
+
+                    
+                </div>
+            
 
             <!-- Gallery -->
             
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                
+                <p>Salut!<br>Dans mes postes précedent, nous avons installé et configuré <strong>Kali Linux</strong>. Maintenant <strong>Kali Linux</strong> utilise aussi plus d’espace, mais toujours est-il que nous n’avons aucun outils installé ou peu je dirai. Dans cet article, nous verrons comment installer tous les outils manquant de <strong>Kali Linux</strong>, afin d’avoir le nécessaire pour notre voyage dans le monde de la sécurité et de l’investigation numérique.</p>
+<h4 id="Pre-requis"><a href="#Pre-requis" class="headerlink" title="Pré-requis:"></a>Pré-requis:</h4><ul>
+<li>Un ordinateur avec <strong>VNC Viewer</strong> (Linux ou Windows) et <a href="https://0patch.github.io/2017/08/14/Installation-De-Serveur-VNC-Sur-Kali-Linux-Raspberry-Pi/"><strong>Installation De Serveur VNC Sur Kali Linux - Raspberry Pi</strong></a> ou un client <strong>SSH</strong> comme <em>putty</em> (Windows uniquement)</li>
+<li>Un Raspberry Pi3 Model B</li>
+<li>Une carte SD ou mémoire (16 Giga octets minimum).</li>
+<li>Un câble RJ45 (Ethernet) - (croisés ou non)</li>
+<li>Un chargeur pour Raspberry Pi Model B ou tout autre chargeur <strong> <em>5V/2A</em> </strong></li>
+<li>Configurer le partage de connexion Wi-Fi vers Ethernet pour <a href="https://0patch.github.io/2017/08/13/Partage-De-Connexion-Wi-Fi-Vers-Ethernet-Part-1/"><em>Linux</em></a> ou <a href="https://0patch.github.io/2017/08/13/Partage-De-Connexion-Wi-Fi-Vers-Ethernet-Part-2/"><em>Windows</em></a></li>
+</ul>
+<p>Pour ce faire, connecter vous a <strong>Raspberry Pi</strong> soit par <strong>Secure Shell (SSH)</strong> ou en utilisant VNC. Une fois connecté, entrez la commande:</p>
+<pre><code class="bash">$ apt-get install kali-linux-full
+</code></pre>
+<p><img src="/img/kali-full-1.png" alt="Reference 1"></p>
+<p><img src="/img/kali-full-2.png" alt="Reference 1"></p>
+<p>Celà prendra énormement de temps selon votre connexion internet. Une fois installé, vous aurez un système pret pour <em> <strong>hacker</strong> </em>.</p>
+<p>Vous pouvez me contactez par <strong>e-mail</strong> ou laissez un <strong>commentaire</strong> et j’éssayerai de vous aider.</p>
+<p>Merci de m’avoir lu et j’espère que vous aurez aîmé cet article. Vous pouvez lire mon précédent article <a href="https://0patch.github.io/2017/08/14/Gagner-Plus-D-Espace-Avec-Raspberry-Pi/">ici</a> et à nous revoir dans le prochain turoriel sur <a href=""><strong>Créer Une Sauvegarde De Kali Linux Raspberry Pi</strong></a>.</p>
+
 
                 
             </div>
