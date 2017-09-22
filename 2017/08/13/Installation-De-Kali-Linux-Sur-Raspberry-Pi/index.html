@@ -10,7 +10,7 @@
 
     <!--Description-->
     
-        <meta name="description" content="Salut!Comme introduit dans mon précédent article sur le  partage de connection Wi-Fi vers Ethernet . Dans ce sécond article, je decrirez comment confi">
+        <meta name="description" content="Salut!Comme je disait dans mon article précédent, je prépare une série de hacking avec KaLi, mais vous l’aurez certainement deviné sur  Raspberry Pi M">
     
 
     <!--Author-->
@@ -20,7 +20,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Partage De Connexion Wi-Fi - Ethernet Part 2"/>
+        <meta property="og:title" content="Installation De Kali Linux Sur Raspberry Pi"/>
     
 
     <!--Open Graph Description-->
@@ -36,7 +36,7 @@
 
     <!--Page Cover-->
     
-        <meta property="og:image" content="https://0patch.github.io/img/eth0-win-bg.jpg" />
+        <meta property="og:image" content="https://0patch.github.io/img/rpi-bg.jpg" />
     
 
         <meta name="twitter:card" content="summary" />
@@ -44,7 +44,7 @@
 
     <!-- Title -->
     
-    <title>Partage De Connexion Wi-Fi - Ethernet Part 2 - Cyber Security &amp; Digital Forensics</title>
+    <title>Installation De Kali Linux Sur Raspberry Pi - Cyber Security &amp; Digital Forensics</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -180,12 +180,12 @@
     <!-- Page Header -->
 <!-- Set your background image for this header in your post front-matter: cover -->
 
-<header class="intro-header" style="background-image: url('/img/eth0-win-bg.jpg')">
+<header class="intro-header" style="background-image: url('/img/rpi-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
-                    <h1>Partage De Connexion Wi-Fi - Ethernet Part 2</h1>
+                    <h1>Installation De Kali Linux Sur Raspberry Pi</h1>
                     
                     <span class="meta">
                         <!-- Date and Author -->
@@ -215,7 +215,7 @@
                         <i class="fa fa-tags" aria-hidden="true"></i> &nbsp;
 
 
-<a href="/tags/Reseaux/">#Réseaux</a> <a href="/tags/Wi-Fi/">#Wi-Fi</a> <a href="/tags/Ethernet/">#Ethernet</a> <a href="/tags/Windows/">#Windows</a>
+<a href="/tags/Linux/">#Linux</a>
 
 
                     
@@ -226,7 +226,7 @@
                         <i class="fa fa-tags" aria-hidden="true"></i> &nbsp;
 
 
-<a href="/tags/Reseaux/">#Réseaux</a> <a href="/tags/Wi-Fi/">#Wi-Fi</a> <a href="/tags/Ethernet/">#Ethernet</a> <a href="/tags/Windows/">#Windows</a>
+<a href="/tags/Linux/">#Linux</a>
 
 
                     
@@ -235,7 +235,7 @@
                     
                         
 
-<a href="/categories/Reseaux-Informatiques/">Réseaux Informatiques</a>
+<a href="/categories/Systemes-d-Exploitation/">Systèmes d'Exploitation</a>
 
                     
                 </div>
@@ -246,25 +246,41 @@
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <p>Salut!<br>Comme introduit dans mon précédent article sur le <a href="https://0patch.github.io/2017/08/13/Partage-De-Connexion-Wi-Fi-Vers-Ethernet-Part-1/"><em> partage de connection <strong>Wi-Fi</strong> vers <strong>Ethernet</strong> </em></a>. Dans ce sécond article, je decrirez comment configurez le partage de connexion sous Windows <strong> <em>(Windows 10 dans mon cas, mais marchera sur toute version Windows)</em> </strong>. Sans trop perdre de temps allons dans le vif du sujet. </p>
+                <p>Salut!<br>Comme je disait dans mon <a href="https://0patch.github.io/2017/08/13/Partage-De-Connexion-Wi-Fi-Vers-Ethernet-Part-2/">article</a> précédent, je prépare une série de hacking avec <strong>KaLi</strong>, mais vous l’aurez certainement deviné sur <strong> <em>Raspberry Pi Model B</em> </strong>.<br><a href="https://www.kali.org/" target="_blank" rel="external"><strong>Kali Linux</strong></a> pour resumé est une distribution <a href="https://www.linux.org/" target="_blank" rel="external"><em>Linux</em></a> basé sur <strong>Debian</strong> developé et maintenu par <a href="https://www.offensive-security.com/" target="_blank" rel="external"><strong>Offensive Security</strong></a>. Utilisé par les experts, chercheurs en securité informatique et investigation numérique pour les nombreux outils dont-il ré-gorges. Certainement pas le seul du genre mais l’un des plus connu et plus utilisé à ce jour. Nous decouvrirons le système au fur et à mésure.<br>Quant à <strong>Raspberry Pi</strong>, c’est une serie de minis ordinateurs developé au Royaume-Uni par le <strong> <em>Raspberry Foundation</em> </strong> en faveur de la promotion de l’apprentissage des notions basiques de l’informatique dans les écoles et les pays en développement. Utilisé en robotique, comme objet-connecté et autres usages interessant comme celui dont nous nous appretons à faire. Comme je le disait plus haut, <strong>Raspberry Pi</strong> est une serie de minis ordinateurs sans claviers ni écran par defaut. Pour notre série de tutoriels, nous utiliserons le <strong> <em>Model B</em> </strong>.<br>Cette serie d’article pourrais bien être reproduit par une <strong> *installation physique (pas virtuelle) de Kali Linux sur PC ou Laptop</strong> *.</p>
 <h4 id="Pre-requis"><a href="#Pre-requis" class="headerlink" title="Pré-requis:"></a>Pré-requis:</h4><ul>
-<li>Un ordinateur (Windows)</li>
-<li>Un Raspberry Pi3 Model B ou un ordinateur (Linux ou Windows) </li>
+<li>Un ordinateur (Linux ou Windows)</li>
+<li>Un Raspberry Pi3 Model B</li>
+<li>Une carte SD ou mémoire (16 Giga octets minimum).</li>
+<li>Un adapteur pour carte SD (USB de préférence)</li>
 <li>Un câble RJ45 (Ethernet) - (croisés ou non)</li>
+<li>Un chargeur pour Raspberry Pi Model B ou tout autre chargeur <strong> <em>5V/2A</em> </strong></li>
+<li>Configurer le partage de connexion Wi-Fi vers Ethernet pour <a href="https://0patch.github.io/2017/08/13/Partage-De-Connexion-Wi-Fi-Vers-Ethernet-Part-1/"><em>Linux</em></a> ou <a href="https://0patch.github.io/2017/08/13/Partage-De-Connexion-Wi-Fi-Vers-Ethernet-Part-2/"><em>Windows</em></a></li>
+<li>Télécharger <a href="https://www.offensive-security.com/kali-linux-arm-images/" target="_blank" rel="external"><strong> <em>Kali Linux pour RaspberryPi 2 / 3</em> </strong></a></li>
 </ul>
-<h3 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h3><p>Faites un <em>clic-droit</em> sur l’icône <strong>Wi-Fi</strong> ou <strong>Ethernet</strong> à la barre de tâches comme sur la capture ci-dessous et cliquez sur <strong>Ouvrir le Centre Réseaux et partage</strong>.</p>
-<p><img src="/img/Eth0-Win-1.png" alt="Reference 1"></p>
-<p>Dans la nouvelle fenêtre, cliquez sur <strong>Modifier les paramètres de la carte</strong> comme encadrez dans la capture ci-dessous.</p>
-<p><img src="/img/Eth0-Win-2.png" alt="Reference 2"> </p>
-<p>Ensuite faites <strong> <em>clic-droit</em> </strong> sur vôtre carte <strong>Wi-Fi</strong> et cliquez sur <strong>Propriétés</strong>. </p>
-<p><img src="/img/Eth0-Win-3.png" alt="Reference 3"></p>
-<p>Maintenant, cochez <strong>Autorizer d’autres utilisateurs du réseau à se connecter via la connexion Internet de cet ordinateur</strong> et selectionné <strong>Connexion au réseau local</strong> dans la liste déroulante. Pour finir cliquez sur <strong> <em>Ok</em> </strong>.<br>Un message s’affichera dans une fenêtre plus petite comme dans la capture suivante. Notez l’<strong>adresse IP</strong> contenu dans le message generalement du format <strong>XXX.XXX.XXX.1</strong>. Cliquez <strong> <em>Ok</em> </strong>. </p>
-<p><img src="/img/Eth0-Win-4.png" alt="Reference 4"></p>
-<p><strong>NB:</strong> <em>Si vous avez configuré une adresse statique sur vôtre carte <strong>Ethernet</strong> ou <strong>Connexion au réseau local</strong>, veuillez supprimer vôtre configuration et la remettre en <strong>dynamique ou DHCP</strong> </em>.</p>
-<p>Maintenant que vous avez configuré la connexion, connecté le sécond ordinateur en utilisant le câble <strong>Ethernet</strong>. Ensuite télécharger <a href="https://www.advanced-ip-scanner.com/fr/" target="_blank" rel="external"><strong>Advanced IP Scanner</strong></a> et cliquez sur l’executable pour <strong>installer</strong> ou <strong>lancer de façon portable</strong>. Je pense qu’il n’est pas nécéssaire devous indiquez comment le faire. Une fois l’application ouverte, cliquez sur <strong>Analyzer</strong> et patientez. Une fois l’analyze terminé, vous aurez <strong> <em>l’adresse IP du second ordinateur</em> </strong> et son adresse <strong>MAC</strong> ou <strong> <em>Media Access Control</em> </strong> comme ci-dessous.</p>
-<p><img src="/img/Eth0-Win-5.png" alt="Reference 5"></p>
-<p><strong>NB:</strong> <em>Les addresses scannées sont du format <strong>XXX.XXX.XXX.1-254</strong> où <strong>XXX.XXX.XXX.1</strong> réprésente l’adresse noté plus haut </em>.</p>
-<p>Merci de m’avoir lu et j’espère que vous aurez appréciez cet article. Vous pouvez lire mon précédent article <a href="https://0patch.github.io/2017/08/13/Partage-De-Connexion-Wi-Fi-Vers-Ethernet-Part-1/">ici</a>.</p>
+<h4 id="Utilisateurs-Windows"><a href="#Utilisateurs-Windows" class="headerlink" title="Utilisateurs Windows"></a>Utilisateurs Windows</h4><p>Si vous êtes utilisateurs Windows, veuillez télécharger et installer les logiciels suivant: <a href="http://www.7-zip.org/download.html" target="_blank" rel="external"><strong> <em>7-Zip</em> </strong></a>, <a href="https://www.sdcard.org/downloads/formatter_4/index.html" target="_blank" rel="external"><strong> <em>SD Formater</em> </strong></a> et <a href="https://sourceforge.net/projects/win32diskimager/files/latest/download" target="_blank" rel="external"><strong> <em>win32diskimager</em> </strong></a>. Une fois les outils installés, clic-droit sur le fichier de <strong>Kali Linux</strong> téléchargé et cliquez sur <strong>Extraire vers Kali-XXXX-XX-rpi2.img</strong> comme sur l’image ci-dessous.</p>
+<p><img src="/img/win-rpi-3.png" alt="Reference 1"></p>
+<p>Une fois le fichier extrait, connecter la carte SD à l’aide d’un adaptateur. Une fois la carte connecté, noté la lettre attribué et ouvrez le logiciel <strong>SD Formateur</strong> précédemment installé. Selectionnez la lettre de votre carte dans la liste déroulante noté <strong> <em>Drive</em> </strong> , puis cliquez sur <strong>Option</strong> et selectionnez <strong>FULL (Erase)</strong> comme <strong>FORMAT TYPE</strong> puis <strong>OK</strong> dans la nouvelle fenêtre qui apparaitra. Pour terminer cliquez sur <strong>Format</strong>.</p>
+<p><img src="/img/win-rpi-4.png" alt="Reference 2"></p>
+<p>A la fin du formatage, vous aurez un résultat comme ci-dessous. Cliquez <strong>Ok</strong> et <strong>Exit</strong>.</p>
+<p><img src="/img/win-rpi-5.png" alt="Reference 3"></p>
+<p>Maintenant que nous avons formaté notre <strong> <em>carte SD</em> </strong> , ouvrez l’application <strong>win32diskimager</strong>. Selectionnez la lettre de votre <strong>carte</strong> et ciquez sur l’icône bleu symbolisant un dossier et sélectionnez le fichier <strong>Kali Linux</strong> extrait précédemment. Puis cliquez sur <strong>Ecrire</strong> ou <strong>Write</strong> et patientez. </p>
+<p><img src="/img/win-rpi-6.png" alt="Reference 4"></p>
+<p>A la fin de l’extraction, vous aurez un résultat semblable à la capture ci-dessous. Cliquez sur <strong>Exit</strong> ou <strong>Fermer</strong>.</p>
+<p><img src="/img/win-rpi-7.png" alt="Reference 5"></p>
+<p>Vous obtiendrz deux partions une de <strong>64 Mega octets</strong> qui contient les <strong>overlays</strong> et <strong>une autre plus grande</strong>.</p>
+<p><img src="/img/win-rpi-8.png" alt="Reference 6"></p>
+<h3 id="Utilisateurs-Linux"><a href="#Utilisateurs-Linux" class="headerlink" title="Utilisateurs Linux"></a>Utilisateurs Linux</h3><p>Pour les utilisateurs Linux, l’installation se fait en ligne de commande. <strong> *(dans mon cas je considère que vous avez télécharger le fichier d’installation dans le dossier </strong> <em>Downloads</em> <strong> ou </strong> <em>Téléchargements</em> **)</p>
+<p><strong>NB:</strong> <em>Ce procédé peut-etre utilisé pour la création de clé <strong>USB</strong> ou </em>Universal Serial Bus<em> bootable</em> Linux. La majorité des distrubions accepterons cette méthode. N’oubliez pas de remplacer le <strong>nom de fichier</strong> et le péripherique <strong>USB</strong> par les correspondants.</p>
+<p>Connecter votre carte SD à l’aide d’un adaptateur et listez les disques connectés et notes votre disque ou carte en tapant la commande ci-dessous: (Dans mon cas <strong> <em>/dev/sdb</em> </strong>)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">cd</span> ~/Downloads</div><div class="line">$ fdisk -l</div></pre></td></tr></table></figure></p>
+<p><img src="/img/linux-rpi-0.png" alt="Reference 7"></p>
+<p>Extraire ensuite le fichier dans le dossier en tapant: <strong> <em>(kali-XXXX.xx-rpi2.img.xz / kali-XXXX.xx-rpi2.img les noms de fichiers)</em> </strong> . Tabulez pour compléter le nom de fichier <strong>(Astuce)</strong>.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ unxz kali-XXXX.xx-rpi2.img.xz -v</div></pre></td></tr></table></figure>
+<p><img src="/img/linux-rpi-2.png" alt="Reference 8"></p>
+<p>Une fois le fichier extrait, l’extraire sur la <strong>carte SD</strong> en tapant:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ dd <span class="keyword">if</span>=kali-XXXX.xx-rpi2.img of=/dev/sdb bs=512k status=progress</div></pre></td></tr></table></figure>
+<p><img src="/img/linux-rpi-4.png" alt="Reference 9"> </p>
+<p>Ejecter la <strong>carte SD</strong> et revoyons-nous au prochain article sur <a href=""><strong> <em>Installation De VNC Sur Kali Linux - Raspberry Pi</em> </strong></a>.</p>
+<p>Merci de m’avoir lu et j’espère que vous aurez aîmé cet article. Vous pouvez lire mon précédent article <a href="https://0patch.github.io/2017/08/13/Partage-De-Connexion-Wi-Fi-Vers-Ethernet-Part-2/">ici</a>.</p>
 
 
                 

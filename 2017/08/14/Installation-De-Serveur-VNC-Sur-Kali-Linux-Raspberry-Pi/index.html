@@ -10,7 +10,7 @@
 
     <!--Description-->
     
-        <meta name="description" content="Salut!Comme introduit dans mon précédent article sur le  partage de connection Wi-Fi vers Ethernet . Dans ce sécond article, je decrirez comment confi">
+        <meta name="description" content="Salut!J’èspere que vous aurez aîmé mon précédent tutoriel sur l’installation de Kali Linux sur Raspberry Pi . Maintenant que nous avons une  carte SD ">
     
 
     <!--Author-->
@@ -20,7 +20,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Partage De Connexion Wi-Fi - Ethernet Part 2"/>
+        <meta property="og:title" content="Installation De Serveur VNC Sur Kali Linux - Raspberry Pi"/>
     
 
     <!--Open Graph Description-->
@@ -36,7 +36,7 @@
 
     <!--Page Cover-->
     
-        <meta property="og:image" content="https://0patch.github.io/img/eth0-win-bg.jpg" />
+        <meta property="og:image" content="https://0patch.github.io/img/rpi-vnc-bg.png" />
     
 
         <meta name="twitter:card" content="summary" />
@@ -44,7 +44,7 @@
 
     <!-- Title -->
     
-    <title>Partage De Connexion Wi-Fi - Ethernet Part 2 - Cyber Security &amp; Digital Forensics</title>
+    <title>Installation De Serveur VNC Sur Kali Linux - Raspberry Pi - Cyber Security &amp; Digital Forensics</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -180,12 +180,12 @@
     <!-- Page Header -->
 <!-- Set your background image for this header in your post front-matter: cover -->
 
-<header class="intro-header" style="background-image: url('/img/eth0-win-bg.jpg')">
+<header class="intro-header" style="background-image: url('/img/rpi-vnc-bg.png')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
-                    <h1>Partage De Connexion Wi-Fi - Ethernet Part 2</h1>
+                    <h1>Installation De Serveur VNC Sur Kali Linux - Raspberry Pi</h1>
                     
                     <span class="meta">
                         <!-- Date and Author -->
@@ -215,7 +215,7 @@
                         <i class="fa fa-tags" aria-hidden="true"></i> &nbsp;
 
 
-<a href="/tags/Reseaux/">#Réseaux</a> <a href="/tags/Wi-Fi/">#Wi-Fi</a> <a href="/tags/Ethernet/">#Ethernet</a> <a href="/tags/Windows/">#Windows</a>
+<a href="/tags/Linux/">#Linux</a> <a href="/tags/Reseaux/">#Réseaux</a>
 
 
                     
@@ -226,7 +226,7 @@
                         <i class="fa fa-tags" aria-hidden="true"></i> &nbsp;
 
 
-<a href="/tags/Reseaux/">#Réseaux</a> <a href="/tags/Wi-Fi/">#Wi-Fi</a> <a href="/tags/Ethernet/">#Ethernet</a> <a href="/tags/Windows/">#Windows</a>
+<a href="/tags/Linux/">#Linux</a> <a href="/tags/Reseaux/">#Réseaux</a>
 
 
                     
@@ -235,7 +235,7 @@
                     
                         
 
-<a href="/categories/Reseaux-Informatiques/">Réseaux Informatiques</a>
+<a href="/categories/Installation-de-Logiciels/">Installation de Logiciels</a>
 
                     
                 </div>
@@ -246,25 +246,42 @@
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <p>Salut!<br>Comme introduit dans mon précédent article sur le <a href="https://0patch.github.io/2017/08/13/Partage-De-Connexion-Wi-Fi-Vers-Ethernet-Part-1/"><em> partage de connection <strong>Wi-Fi</strong> vers <strong>Ethernet</strong> </em></a>. Dans ce sécond article, je decrirez comment configurez le partage de connexion sous Windows <strong> <em>(Windows 10 dans mon cas, mais marchera sur toute version Windows)</em> </strong>. Sans trop perdre de temps allons dans le vif du sujet. </p>
+                <p>Salut!<br>J’èspere que vous aurez aîmé mon précédent tutoriel sur l’installation de <a href=""><strong>Kali Linux</strong> sur <strong>Raspberry Pi</strong></a> . Maintenant que nous avons une <strong> <em>carte SD</em> </strong> fin prête. Nous allons dans ce article le connecter à <strong>Raspberry Pi</strong> et installer <a href="https://www.realvnc.com/en/" target="_blank" rel="external"><strong>VNC</strong></a>. Pour la petite introduction, <strong>VNC</strong> est un logiciel de <strong> <em>bureau à distance</em> </strong> qui vous permet de vous connecter à un ordinateur distant à travers une interface graphique. <strong>VNC</strong> de l’anglais <strong>Virtual Networking Computing</strong> est aussi considéré par certains comme un logiciel de partage de bureau. C’est à dire que plusieurs utilisateurs ont accès à la même interface graphique de facon simultané. Originellement developé par <a href="https://en.wikipedia.org/wiki/Olivetti_%26_Oracle_Research_Lab" target="_blank" rel="external"><strong>Olivetti &amp; Oracle Research Lab</strong></a> à Cambridge, sous une licence <a href="https://en.wikipedia.org/wiki/GNU_General_Public_License" target="_blank" rel="external"><strong>GNU General Public License</strong></a> et basé sur le protocol <a href="https://en.wikipedia.org/wiki/RFB_protocol" target="_blank" rel="external"><strong>RFB</strong></a> ou <strong> <em>Remote Frame Buffer</em> </strong>. Snip … Bref !!!  Allons au vif du sujet.</p>
 <h4 id="Pre-requis"><a href="#Pre-requis" class="headerlink" title="Pré-requis:"></a>Pré-requis:</h4><ul>
-<li>Un ordinateur (Windows)</li>
-<li>Un Raspberry Pi3 Model B ou un ordinateur (Linux ou Windows) </li>
+<li>Un ordinateur (Linux ou <strong> <em>Windows + une cle USB bootable Linux</em> </strong>)</li>
+<li>Un Raspberry Pi3 Model B</li>
+<li>Une carte SD ou mémoire (16 Giga octets minimum).</li>
+<li>Un adapteur pour carte SD (USB de préférence)</li>
 <li>Un câble RJ45 (Ethernet) - (croisés ou non)</li>
+<li>Un chargeur pour Raspberry Pi Model B ou tout autre chargeur <strong> <em>5V/2A</em> </strong></li>
+<li>Configurer le partage de connexion Wi-Fi vers Ethernet pour <a href="https://0patch.github.io/2017/08/13/Partage-De-Connexion-Wi-Fi-Vers-Ethernet-Part-1/"><em>Linux</em></a> ou <a href="https://0patch.github.io/2017/08/13/Partage-De-Connexion-Wi-Fi-Vers-Ethernet-Part-2/"><em>Windows</em></a></li>
+<li><a href=""><em>Installer Kali Linux sur Raspberry Pi</em></a></li>
+<li>Télécharger <a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html" target="_blank" rel="external"><strong>Putty</strong></a> un outil pour connexion a distance (<strong>Uniquement pour les utilisateurs Windows</strong>)</li>
+<li>Télécharger et installer <a href="https://www.realvnc.com/en/connect/download/viewer/windows/" target="_blank" rel="external"><strong>VNC Viewr</strong></a> (<strong>Uniquement pour les utilisateurs Windows</strong>)</li>
 </ul>
-<h3 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h3><p>Faites un <em>clic-droit</em> sur l’icône <strong>Wi-Fi</strong> ou <strong>Ethernet</strong> à la barre de tâches comme sur la capture ci-dessous et cliquez sur <strong>Ouvrir le Centre Réseaux et partage</strong>.</p>
-<p><img src="/img/Eth0-Win-1.png" alt="Reference 1"></p>
-<p>Dans la nouvelle fenêtre, cliquez sur <strong>Modifier les paramètres de la carte</strong> comme encadrez dans la capture ci-dessous.</p>
-<p><img src="/img/Eth0-Win-2.png" alt="Reference 2"> </p>
-<p>Ensuite faites <strong> <em>clic-droit</em> </strong> sur vôtre carte <strong>Wi-Fi</strong> et cliquez sur <strong>Propriétés</strong>. </p>
-<p><img src="/img/Eth0-Win-3.png" alt="Reference 3"></p>
-<p>Maintenant, cochez <strong>Autorizer d’autres utilisateurs du réseau à se connecter via la connexion Internet de cet ordinateur</strong> et selectionné <strong>Connexion au réseau local</strong> dans la liste déroulante. Pour finir cliquez sur <strong> <em>Ok</em> </strong>.<br>Un message s’affichera dans une fenêtre plus petite comme dans la capture suivante. Notez l’<strong>adresse IP</strong> contenu dans le message generalement du format <strong>XXX.XXX.XXX.1</strong>. Cliquez <strong> <em>Ok</em> </strong>. </p>
-<p><img src="/img/Eth0-Win-4.png" alt="Reference 4"></p>
-<p><strong>NB:</strong> <em>Si vous avez configuré une adresse statique sur vôtre carte <strong>Ethernet</strong> ou <strong>Connexion au réseau local</strong>, veuillez supprimer vôtre configuration et la remettre en <strong>dynamique ou DHCP</strong> </em>.</p>
-<p>Maintenant que vous avez configuré la connexion, connecté le sécond ordinateur en utilisant le câble <strong>Ethernet</strong>. Ensuite télécharger <a href="https://www.advanced-ip-scanner.com/fr/" target="_blank" rel="external"><strong>Advanced IP Scanner</strong></a> et cliquez sur l’executable pour <strong>installer</strong> ou <strong>lancer de façon portable</strong>. Je pense qu’il n’est pas nécéssaire devous indiquez comment le faire. Une fois l’application ouverte, cliquez sur <strong>Analyzer</strong> et patientez. Une fois l’analyze terminé, vous aurez <strong> <em>l’adresse IP du second ordinateur</em> </strong> et son adresse <strong>MAC</strong> ou <strong> <em>Media Access Control</em> </strong> comme ci-dessous.</p>
-<p><img src="/img/Eth0-Win-5.png" alt="Reference 5"></p>
-<p><strong>NB:</strong> <em>Les addresses scannées sont du format <strong>XXX.XXX.XXX.1-254</strong> où <strong>XXX.XXX.XXX.1</strong> réprésente l’adresse noté plus haut </em>.</p>
-<p>Merci de m’avoir lu et j’espère que vous aurez appréciez cet article. Vous pouvez lire mon précédent article <a href="https://0patch.github.io/2017/08/13/Partage-De-Connexion-Wi-Fi-Vers-Ethernet-Part-1/">ici</a>.</p>
+<p>Connecter votre carte SD à l’aide de l’adaptateur à votre ordinateur Linux. Pour ceux qui sont sous Windows, rédemarrez votre ordinateur sur la clé Linux avant de connecter l’adaptateur. Ensuite deux partitions apparaitront dans le gestionnaire fichier. Allez dans celui le plus grand en taille, <strong>7.3 GB</strong> pour mon cas. Une fois dans la partition, allez dans le dossier suivant: <strong>/etc/NetworkManager/NetworkManager.conf</strong> et double-cliquez déssus. Le fichier souvrira, changer la valeur de <strong>managed</strong> de <strong> <em>false</em> </strong> à <strong> <em>true</em> </strong>. Enregistrer le fichier et ferme le fichier <strong>NetworkManager.conf</strong>, ensuite éjecte l’adaptateur. Réferé vous à la capture ci-dessous: (<em>Pour les utilisateurs de windows, vous pouvez retirez la clé USB bootable et rédemarrez sous Windows</em>)</p>
+<p><img src="/img/vnc-server-1.png" alt="Reference 1"></p>
+<p>Maintenant, inséré la <strong>carte SD</strong> dans le <strong> <em>Raspberry Pi</em> </strong> , branche le <strong>Raspberry Pi</strong> à la source de courant et connecter le cable <strong>Ethernet</strong> entre le <strong>Raspberry Pi</strong> et votre <strong>ordinateur</strong>. A ce moment précis, je suppose que vous avez l’<strong> <em>adresse IP de Raspberry</em> </strong> . Si non, vous pouvez vous lire mon article sur le <strong> <em>partage de connexion</em> </strong> (<em>voir pré-requis</em>). Nous allons maintenant nous connectez à <strong>Raspberry Pi</strong> à travers <strong>SSH</strong> ou <strong>Secure Shell</strong> avec les identifiants par defaut: <em>nom d’utilisateur:</em> <strong>root</strong> et <em>mot de passe:</em> <strong>toor</strong>. Pour celà:</p>
+<h4 id="Sur-Windows"><a href="#Sur-Windows" class="headerlink" title="Sur Windows"></a>Sur Windows</h4><p>Double-cliquez sur le fihier <strong>Putty</strong>, entrez l’adresse IP comme ci-dessous, ensuite entrez le nom d’utilisateur <strong>root</strong> et le mot de passe <strong>toor</strong>.</p>
+<p><img src="/img/vnc-server-2.png" alt="Reference 2"></p>
+<h4 id="Sur-Linux"><a href="#Sur-Linux" class="headerlink" title="Sur Linux"></a>Sur Linux</h4><p>Ouvrez un terminal et tapez la commande ci-dessous(<strong>XXX.XXX.XXX.XXX</strong> represente l’adresse IP):<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh root@XXX.XXX.XXX.XXX</div></pre></td></tr></table></figure></p>
+<p>Ensuite entrez le nom d’utilisateur <strong>root</strong> et le mot de passe <strong>toor</strong>.</p>
+<h4 id="Installation-et-configration-de-VNC"><a href="#Installation-et-configration-de-VNC" class="headerlink" title="Installation et configration de VNC"></a>Installation et configration de VNC</h4><p>Une fois connecté, tapez les commandes suivantes pour installer.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ apt-get update</div><div class="line">$ apt-get install x11vnc</div></pre></td></tr></table></figure></p>
+<p><img src="/img/vnc-server-3.png" alt="Reference 3"></p>
+<p>Ensuite, tapez la commande suivante pour configurer VNC (<strong> <em>notez bien le mot de passe VNC</em> </strong>):<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ x11vnc -storepassword</div></pre></td></tr></table></figure></p>
+<p>Ensuite definissez un mote de passe et confirmez le. Pour demarrer, tapez:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ x11vnc -ncache 10 -auth guess -nap -forever -loop -repeat -rfbauth /root/.vnc/passwd -rfbport 5900</div></pre></td></tr></table></figure></p>
+<p><img src="/img/vnc-server-4.png" alt="Reference 4"></p>
+<ul>
+<li><strong>ncache</strong>: cache le contenu de l’écran pour une récupération rapide qui réduit le «décalage».</li>
+<li><strong>auth guess</strong>: utilisé pour deviner le fichier XAUTHORITY pour l’affichage</li>
+<li><strong>nap</strong>: surveille l’activité et si elle est basse, prend de longues naps</li>
+<li><strong>forever</strong>: maintient l’écoute de plus de connexions plutôt que de s’arrêter dès que le premier client se déconnecte.</li>
+<li><strong>repeat</strong>: les clients VNC sont connectés et l’entrée du clavier VNC n’est pas au repos pendant plus de 5 minutes. Cela fonctionne autour d’un bogue de frappe répétitif (déclenché par de longs délais de traitement entre les événements clés de la clé et de la clé: soit à partir de changements d’écran grand ou de latence élevée).</li>
+<li><strong>rfbauth</strong>: authentifie le fichier de mot de passe</li>
+<li><strong>rfbport</strong>: port TCP pour protocole RFB</li>
+</ul>
+<p>Maintenant que vous avez configuré et demarré VNC, vous pouvez utiliser <strong>VNC Viewer</strong> pour vous connecter à <strong>Raspberry Pi</strong>. Pour ceux sur Windows, je pense qu’il n’est pas nécéssaire de vous indiquer comment installer <strong>VNC Viewer</strong>. Pour ceux sur Kali Linux, vous pouvez voir mon tutoriel sur <a href=""><strong>Installation De VNC Viewer Sur Kali Linux</strong></a> et pour les autres, vous pouvez me contactez par <strong>e-mail</strong> ou laissez un <strong>commentaire</strong> et j’essayerai de vous aider.</p>
+<p>Merci de m’avoir lu et j’espère que vous aurez aîmé cet article. Vous pouvez lire mon précédent article <a href="">ici</a> et à nous revoir dans le prochain turoriel sur <a href=""><strong>Gagner Plus D’espace Avec Raspberry Pi</strong></a>.</p>
 
 
                 
